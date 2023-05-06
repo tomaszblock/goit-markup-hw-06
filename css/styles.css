@@ -123,6 +123,7 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: color, box-shadow;
   transition-duration: 250ms;
+  fill: var(--color-white);
 }
 .list-title {
   font-weight: 700;
@@ -164,6 +165,7 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: color, fill;
   transition-duration: 250ms;
+  width: 246px;
 }
 .footer-contact-alpha {
   color: var(--color-white-alpha);
@@ -385,7 +387,7 @@ ul {
   justify-content: flex-start;
   flex-direction: column;
 }
-.footer-media-title {
+.footer-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -516,4 +518,21 @@ ul {
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: var(--color-white);
+}
+.d1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.d2 {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-left: 8px;
+}
+.button1 {
+  width: 200px;
+  height: 50px;
 }
