@@ -37,6 +37,10 @@ textarea:focus,
 input:focus {
   outline: none;
 }
+textarea {
+  border: none;
+  border-radius: 4px;
+}
 ::placeholder {
   color: var(--color-font-secondary-alpha);
 }
@@ -580,6 +584,7 @@ ul {
   color: var(--color-font-secondary);
   margin-bottom: 10px;
   gap: 4px;
+  width: 100%;
 }
 .modal-label input {
   border: none;
@@ -588,11 +593,17 @@ ul {
   border-radius: 4px;
 }
 .modal-label div {
-  border: 1px solid green;
   display: flex;
   align-items: center;
   border: 1px solid var(--color-font-primary-alpha);
   border-radius: 4px;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill, border-color;
+  transition-duration: 250ms;
+}
+.modal-label div:focus-within {
+  fill: var(--color-special-primary);
+  border-color: var(--color-special-primary);
 }
 .modal-inner-box {
   padding: 40px;
@@ -619,4 +630,61 @@ ul {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
+}
+.checkbox {
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--color-font-secondary);
+  gap: 8px;
+  padding-top: 10px;
+}
+.checkbox a {
+  color: var(--color-special-primary);
+}
+.checkbox-input {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.checkbox-border {
+  position: absolute;
+  left: 3px;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity;
+  transition-duration: 250ms;
+}
+.checkbox-input:checked + .checkbox-label .checkbox-border {
+  fill: var(--color-white);
+  opacity: 1;
+}
+.checkbox-input:checked + .checkbox-label .checkbox-check {
+  fill: var(--color-special-primary);
+  background-color: var(--color-special-primary);
+}
+.checkbox-check {
+  border-radius: 2px;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+}
+.modal-submit-button {
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.modal-inner-box form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
