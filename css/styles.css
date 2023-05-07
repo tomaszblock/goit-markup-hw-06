@@ -1,11 +1,13 @@
 :root {
   --color-font-primary: rgb(33, 33, 33);
+  --color-font-primary-alpha: rgba(33, 33, 33, 0.2);
   --color-special-primary: rgb(33, 150, 243);
   --color-special-primary-opacity: rgba(33, 150, 243, 0.9);
   --color-special-secondary: rgb(89, 0, 255);
   --color-white: rgb(255, 255, 255);
   --color-white-alpha: rgba(255, 255, 255, 0.6);
   --color-font-secondary: rgb(117, 117, 117);
+  --color-font-secondary-alpha: rgba(117, 117, 117, 0.5);
   --color-background-primary: rgb(47, 48, 58);
   --color-buttons: rgb(245, 244, 250);
   --color-black: rgb(0, 0, 0);
@@ -26,7 +28,8 @@ body a {
 ul,
 p,
 h1,
-h2 {
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
@@ -34,7 +37,9 @@ textarea:focus,
 input:focus {
   outline: none;
 }
-
+::placeholder {
+  color: var(--color-font-secondary-alpha);
+}
 ul {
   list-style-type: none;
 }
@@ -438,6 +443,9 @@ ul {
 }
 .modal {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 528px;
   height: 581px;
   background-color: var(--color-white);
@@ -548,7 +556,7 @@ ul {
   padding-right: 28px;
 }
 .footer-news-label input:focus {
-  border: 1px solid rgba(33, 150, 243, 1);
+  border: 1px solid var(--color-special-primary);
 }
 .footer-news-label input {
   height: 50px;
@@ -561,4 +569,54 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: border;
   transition-duration: 250ms;
+}
+.modal-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-font-secondary);
+  margin-bottom: 10px;
+  gap: 4px;
+}
+.modal-label input {
+  border: none;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+}
+.modal-label div {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-font-primary-alpha);
+  border-radius: 4px;
+}
+.modal-inner-box {
+  padding: 40px;
+  flex-grow: 1;
+  width: 100%;
+}
+.modal-label div svg {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+.modal-label textarea {
+  resize: none;
+  padding: 12px 16px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
 }
